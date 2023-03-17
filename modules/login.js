@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 // // 引入sequelize对象
-const db = require('../config/db');
+const db = require('../config/dbConfig');
 // // 引入数据表模型
 const login = require('../schema/login')(db, DataTypes);    // 数据值
 
@@ -8,7 +8,12 @@ const login = require('../schema/login')(db, DataTypes);    // 数据值
 const tokenGenerate = require('../utils/TokenGenerate')
 
 class loginModel {
-    static async findLogin(requestBody) {
+    /**
+     * 校验用户登录信息
+     * @param {*} requestBody 
+     * @returns 
+     */
+    static async verificationLogin(requestBody) {
         var responseBody;
         var currentLogin;
         try {

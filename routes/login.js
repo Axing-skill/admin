@@ -5,6 +5,7 @@ const loginController = require('../controllers/login');
 
 LoginRouter.prefix('/login')
 
-LoginRouter.post('/', loginController.find);
+LoginRouter.get('/', loginController.login);
+LoginRouter.post('/', loginController.login);
 
 module.exports = LoginRouter
