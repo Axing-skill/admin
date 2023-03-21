@@ -15,7 +15,7 @@ app.use(session(sessionConfig, app))  //启动session
 
 // 2. 中间件注册
 app.use(jwt({ secret: tokenSecret }).unless({
-    path: [/^\/login/]  // 设置白名单
+    path: [/^\/login/,/^\/login\/ws/]  // 设置白名单
 }));
 
 
@@ -56,6 +56,9 @@ app.use(combineRouters())
 module.exports = app
 
 // =============================================================
+
+
+
 
 
 

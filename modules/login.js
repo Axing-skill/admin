@@ -13,7 +13,7 @@ class loginModel {
      * @param {*} requestBody 
      * @returns 
      */
-    static async verificationLogin(requestBody) {
+    static async verificationUserLogin(requestBody) {
         var responseBody;
         var currentLogin;
         try {
